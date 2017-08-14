@@ -29,7 +29,7 @@
 		request = $.ajax({
 			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
 			method: "POST",
-			dataType: 'jsonp',
+			dataType: 'json',
 			data: serializedData
 		});
 
@@ -49,7 +49,7 @@
 		request.always(function (response) {
 			// Reenable the inputs
 			$inputs.prop("disabled", false);
-			console.log(JSON.parse(response));
+			console.log(response);
 		});
 
 		// Prevent default posting of form
