@@ -49,7 +49,7 @@
 		request.always(function (response) {
 			// Reenable the inputs
 			$inputs.prop("disabled", false);
-			console.log(response.result + "Row " + response.row + " was created.");
+			console.log(response.result + ". Row " + response.row + " was created.");
 		});
 
 		// Prevent default posting of form
@@ -78,6 +78,9 @@
 	};
 
 	var parse = function (data) {
+		if (data.status == 'error'){
+			console.error(data.errors[0].detailed_message);
+		}
 		var column_length = data.table.cols.length;
 		if (!column_length || !data.table.rows.length) {
 			return false;
