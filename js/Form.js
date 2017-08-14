@@ -49,7 +49,7 @@
 		request.always(function (response) {
 			// Reenable the inputs
 			$inputs.prop("disabled", false);
-			console.log(response);
+			console.log(response.result + "Row " + response.row + " was created.");
 		});
 
 		// Prevent default posting of form
@@ -482,7 +482,7 @@
 	};
 
 	$('#getTestId').click(function (e) {
-		console.log(thisClientData);
+		//console.log(thisClientData);
 		e.preventDefault();
 		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
 			query("select " + thisClientData.data.colId, 'getId');
@@ -535,7 +535,7 @@
 
 	$('#uc_generator').submit(function (e) {
 		e.preventDefault();
-		console.log('The button is clicked');
+		//console.log('The button is clicked');
 		// update hidden inputs
 		var docType = thisClientData.docType;
 		var listId = thisClientData.data.listIds[docType];
