@@ -36,7 +36,6 @@
 		// Callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR) {
 			// Log a message to the console
-			console.log(response);
 		});
 
 		// Callback handler that will be called on failure
@@ -47,9 +46,10 @@
 
 		// Callback handler that will be called regardless
 		// if the request failed or succeeded
-		request.always(function () {
+		request.always(function (response) {
 			// Reenable the inputs
 			$inputs.prop("disabled", false);
+			console.log(JSON.parse(response));
 		});
 
 		// Prevent default posting of form
