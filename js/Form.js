@@ -533,7 +533,7 @@
 		}
 	}
 
-	$('#uc_generator').click(function (e) {
+	$('#uc_generator').submit(function (e) {
 		e.preventDefault();
 		console.log('The button is clicked');
 		// update hidden inputs
