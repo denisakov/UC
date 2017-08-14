@@ -36,7 +36,7 @@
 		// Callback handler that will be called on success
 		request.done(function (response, textStatus, jqXHR) {
 			// Log a message to the console
-
+			console.log(response);
 		});
 
 		// Callback handler that will be called on failure
