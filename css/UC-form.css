@@ -1,20 +1,20 @@
 @font-face {
     font-family: 'Calibre';
-    src: url('CalibreWeb-Light.eot?') format('eot'), url('CalibreWeb-Light.woff') format('woff');
+    src: url('fonts/CalibreWeb-Light.eot?') format('eot'), url('fonts/CalibreWeb-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Calibre';
-    src: url('CalibreWeb-Thin.eot?') format('eot'), url('CalibreWeb-Thin.woff') format('woff');
+    src: url('fonts/CalibreWeb-Thin.eot?') format('eot'), url('fonts/CalibreWeb-Thin.woff') format('woff');
     font-weight: 200;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Calibre';
-    src: url('CalibreWeb-Regular.eot?') format('eot'), url('CalibreWeb-Regular.woff') format('woff');
+    src: url('fonts/CalibreWeb-Regular.eot?') format('eot'), url('fonts/CalibreWeb-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,14 +24,14 @@
 
 @font-face {
     font-family: 'Calibre';
-    src: url('CalibreWeb-Semibold.eot?') format('eot'), url('CalibreWeb-Semibold.woff') format('woff');
+    src: url('fonts/CalibreWeb-Semibold.eot?') format('eot'), url('fonts/CalibreWeb-Semibold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Calibre';
-    src: url('CalibreWeb-Bold.woff') format('woff'), url('CalibreWeb-Bold.eot?') format('eot');
+    src: url('fonts/CalibreWeb-Bold.woff') format('woff'), url('fonts/CalibreWeb-Bold.eot?') format('eot');
     font-weight: 800;
     font-style: normal;
 }
