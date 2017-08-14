@@ -1,0 +1,425 @@
+@font-face {
+    font-family: 'Calibre';
+    src: url('CalibreWeb-Light.eot?') format('eot'), url('CalibreWeb-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('CalibreWeb-Thin.eot?') format('eot'), url('CalibreWeb-Thin.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('CalibreWeb-Regular.eot?') format('eot'), url('CalibreWeb-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/** Treat Calibre Semibold as Bold, Calibre Bold as a black font **/
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('CalibreWeb-Semibold.eot?') format('eot'), url('CalibreWeb-Semibold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('CalibreWeb-Bold.woff') format('woff'), url('CalibreWeb-Bold.eot?') format('eot');
+    font-weight: 800;
+    font-style: normal;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: #f3f1f1;
+    font-family: 'Calibre' !important;
+    color: #374b52;
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.uc_form {
+    margin-top: 40px;
+    background: white;
+}
+
+.lines-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /*background: url('../assets/images/homepage-banner-pattern.png') top left;*/
+    background-size: 6px;
+    opacity: .3;
+}
+
+.heading {
+    /*background: url('../assets/images/background.jpg');*/
+    position: relative;
+    text-align: center;
+    height: 156px;
+    background-position: center center;
+}
+
+.heading img {
+    margin: 0 auto;
+    width: 27%;
+    padding: 14px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+hr {
+    width: 27px;
+    border: 2px solid #2AB4EE;
+    margin: 30px auto;
+}
+
+.subheading {
+    margin: 24px;
+}
+
+.subheading h1 {
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.subheading p {
+    text-align: center;
+    font-weight: 300;
+    color: #5c747d;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 14px;
+    margin-top: 3px;
+    padding-bottom: 13px;
+}
+
+#submitBtn.hidden {
+    display: none;
+}
+
+#submitBtn {
+    background: white;
+    border: 1px solid #949090;
+    color: #2AB4EE;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 11px 35px;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 136px;
+    margin: 9px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+hr {
+    width: 27px;
+    border: 2px solid #2AB4EE;
+    margin: 24px auto;
+}
+
+/*top box styling*/
+
+.first-field {
+    width: 45%;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+}
+
+.first-field h3 {
+    display: block;
+    text-align: center;
+}
+
+.top-fields .documentSelect {
+    display: none;
+}
+
+.top-fields .uc-typeButtons-wrap {
+    display: inline-block;
+    width: 50%;
+}
+
+.top-fields .uc-typeButtons-wrap h3 {
+    display: block;
+}
+
+.top-fields .uc-typeButton,
+.testIdbutton button {
+    background: white;
+    border: 1px solid #949090;
+    color: #2AB4EE;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 11px 35px;
+    font-size: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 136px;
+    display: inline-block;
+    margin: 9px;
+    text-align: center;
+}
+
+.testIdbutton button {
+    width: 197px;
+}
+
+.top-fields .uc-typeButton:hover,
+.testIdbutton button:hover,
+#submitBtn:hover,
+.top-fields .uc-typeButton.active {
+    background: #2AB4EE;
+    color: white;
+    border: 1px solid #2AB4EE;
+}
+
+.uc_form-content {
+    text-align: center;
+    background: white;
+}
+
+
+/*Form styling*/
+
+.second_section {
+    background: white;
+    margin-top: 10px;
+    padding: 27px;
+}
+
+.top-fields {
+    text-align: center;
+    padding-bottom: 26px;
+}
+
+.top-fields h3 {
+    text-transform: uppercase;
+    font-size: 14px;
+    display: block;
+    margin: 10px;
+    text-align: center;
+    color: #86969C;
+}
+
+select {
+    border: 1px solid #949090;
+    height: 32px;
+    background: white;
+    width: 248px;
+    text-align: center;
+    height: 38px;
+    margin-top: 10px;
+}
+
+
+/*hypo form*/
+
+.selecttext {
+    display: inline-block;
+    margin: 18px;
+    padding-top: 20px;
+    padding-bottom: 19px;
+    color: #86969C;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 17%;
+    text-align: left;
+}
+
+.selecttext.hypo {
+    width: 38%;
+}
+
+.addBeth {
+    display: block;
+    color: #86969C;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 23px;
+}
+
+.hyp-checkbox {
+    display: inline-block;
+    margin-left: 21px;
+}
+
+.hyp-checkbox span {
+    color: #6a7989;
+}
+
+
+/*insight form*/
+
+.radioSection span {
+    font-weight: 500;
+    margin: 9px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #2ab4ee;
+}
+
+.addPerson {
+    color: #86969C;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.addPerson p {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.addPerson select {
+    display: inline-block;
+}
+
+
+/*test idea*/
+
+.idea_form.second_section .input:first-of-type {
+    width: 100%;
+    max-width: 75%;
+}
+
+.second_section .timeDate {
+    width: 100%;
+    max-width: 75%;
+}
+
+#uc_sprint_partial {
+    border-top: 10px solid #f3f1f1;
+}
+
+
+/*animated fields*/
+
+.input {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: 19px 31px 23px 27px;
+    max-width: 350px;
+    width: 36%;
+}
+
+.input__field {
+    position: relative;
+    display: block;
+    float: right;
+    width: 100%;
+    margin: 0 -1rem;
+    padding: 1rem .5rem;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    opacity: 0;
+    color: #6a7989;
+    font-size: 13px;
+    transition: opacity 0.3s;
+}
+
+.input__field:focus {
+    outline: none;
+}
+
+.input__label {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    padding: 0 .5rem;
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    color: #86969C;
+    font-weight: bold;
+    font-size: 1.17em;
+    text-align: left;
+    pointer-events: none;
+    user-select: none;
+}
+
+.label__content {
+    position: relative;
+    display: block;
+    padding: 1rem 0;
+    width: 100%;
+    transition: transform 0.3s 0.3s;
+}
+
+.input__label::before,
+.input__label::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.input__label::before {
+    border-top: 2px solid #6a7989;
+    transform: translate3d(0, 100%, 0) translate3d(0, -2px, 0);
+    transition-delay: 0.3s;
+}
+
+.input__label::after {
+    z-index: -1;
+    background: rgba(232, 232, 232, 0.58);
+    transform: scale3d(1, 0, 1);
+    transform-origin: 50% 0;
+}
+
+.input__field:focus,
+.input--filled .input__field {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.input__field:focus+.input__label .label__content,
+.input--filled .label__content {
+    transform: translate3d(0, -80%, 0);
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+    color: #34b4ee;
+}
+
+.input__field:focus+.input__label::before,
+.input--filled .input__label::before {
+    transition-delay: 0s;
+}
+
+.input__field:focus+.input__label::before,
+.input--filled .input__label::before {
+    transform: translate3d(0, 0, 0);
+}
+
+.input__field:focus+.input__label::after,
+.input--filled .input__label::after {
+    transform: scale3d(1, 1, 1);
+    transition-delay: 0.3s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
