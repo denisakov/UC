@@ -174,6 +174,13 @@
                 </span>
 
                 <span class="input">
+                   <textarea id="runLength" class="input__field" name="runLength" cols="39" rows="5"></textarea>
+                    <label class="input__label" for="input-10">
+                        <span class="label__content">Estimated Run Length</span>
+                </label>
+                </span>
+
+                <span class="input">
                    <textarea id="changeLog" class="input__field" name="changelog" cols="39" rows="5"></textarea>
                     <label class="input__label" for="input-10">
                      <span class="label__content">Change Log</span>
@@ -181,9 +188,9 @@
                 </span>
 
                 <span class="input">
-                   <input id="acceptance" class="input__field" type="text" name="minCriteria" size="40" style="height:25px;">
+                   <input id="minEffect" class="input__field" type="text" name="minEffect" size="40" style="height:25px;">
                     <label class="input__label" for="input-10">
-                     <span class="label__content">Acceptance Criteria</span>
+                     <span class="label__content">Minimum Detectable effect</span>
                 </label>
                 </span>
                 <h3 class="selecttext hypo"> Test Owner (add if you want to be added to card):</h3>
@@ -198,9 +205,11 @@
                         <option value="588469704fe4c31045761b07">Beth L</option>
                     </select>
 
-                <h3 class="addBeth">Check this box to add Beth to card:
+                <h3 class="addBeth">Check this box to add Beth to card:</h3>
                     <div class="hyp-checkbox"><input id="beth" type="checkbox" name="bethAddition" value="588469704fe4c31045761b07"><span>Add Beth to Card</span></div>
             </div>
+
+            <!-- Next test -->
             <div id="uc_insight" class="insight_form second_section hidden">
 
                 <span class="input">
