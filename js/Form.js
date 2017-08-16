@@ -58,7 +58,7 @@
 	function getTestId(docType,name,prefix) {
 
 		var data = {'docType':docType,'name':name,'prefix':prefix};
-
+		request1.setRequestHeader("Access-Control-Allow-Origin", "*");
 		// Fire off the request to /form.php
 		request1 = $.ajax({
 			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
