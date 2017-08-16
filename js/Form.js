@@ -2,7 +2,7 @@
 //https://docs.google.com/spreadsheets/d/1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U/gviz/tq?tq=select+D&tqx=responseHandler:getId
 (function () {
 	// Variable to hold request
-	var request,request1;
+	var request;
 
 	// Bind to the submit event of our form
 	function formSubmit(event) {
@@ -56,20 +56,40 @@
 		if (event) event.preventDefault();
 	};
 	function getTestId(docType,name,prefix) {
-		var request1 = new XMLHttpRequest();
 		var data = {'docType':docType,'name':name,'prefix':prefix};
-		request1.setRequestHeader("Access-Control-Allow-Origin", "*");
-		// Fire off the request to /form.php
-		request1 = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
-			method: "GET",
-			dataType: 'json',
-			data: JSON.stringify(data)
-		});
+		var xhr = new XMLHttpRequest();
+
+		var url = 'https://script.google.com/macros/s/AKfycbwxOUAf91clOsmiA4Kzco0rBz5J_AJ-7eytxMkroxLjveZod5t_/exec';
+		xhr.open("GET", url, true);
+
+		xhr.setRequestHeader("Content-type","application/json");
+		xhr.setRequestHeader("charset","utf-8");
+		xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
+
+		xhr.onreadystatechange = function() {
+		  if (xhr.readyState === 4) {
+		      if (xhr.status === 200) {
+		          try {
+		              if (callback) {
+		                  callback(null, JSON.parse(xhr.responseText));
+		              }
+		          } catch(e) {
+		              throw new Error('Malformed response');
+		          }
+		      }
+		  }
+		}
+
+		if (data) {
+		  data = JSON.stringify(data);         // Stringify the data Object literal
+		  xhr.send(data);                      // Added the JSON stringified object.
+		} else {
+		  xhr.send();
+		}
 
 		// Callback handler that will be called regardless
 		// if the request failed or succeeded
-		request1.always(function (response) {
+		xhr.always(function (response) {
 			console.log(response.result + ". Row " + response.row + " was created.");
 		});
 	};
