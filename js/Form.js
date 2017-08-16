@@ -519,17 +519,17 @@
 		$('#testID').val(newId);
 	};
 
-	// $('#getTestId').click(function (e) {
+	// $('#testIdgenerator').click(function (e) {
 	// 	//console.log(thisClientData);
 	// 	e.preventDefault();
 	// 	if (thisClientData && thisClientData.data && thisClientData.data.colId) {
-	// 		getTestId();
-	// 		// query("select " + thisClientData.data.colId, 'getId');
+	// 		//getTestId();
+	// 		 query("select " + thisClientData.data.colId, 'getId');
 	// 	} else {
 	// 		console.error('Failed to get ID - No client data available');
 	// 	}
 	// });
-	$('#getTestId').submit(function (e) {
+	$('#testIdgenerator').submit(function (e) {
 		e.preventDefault();
 		//console.log('The button is clicked');
 		// update hidden inputs
