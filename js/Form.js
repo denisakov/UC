@@ -2,7 +2,7 @@
 //https://docs.google.com/spreadsheets/d/1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U/gviz/tq?tq=select+D&tqx=responseHandler:getId
 (function () {
 	// Variable to hold request
-	var request;
+	var request,request1;
 
 	// Bind to the submit event of our form
 	function formSubmit(event) {
@@ -54,6 +54,27 @@
 
 		// Prevent default posting of form
 		if (event) event.preventDefault();
+	};
+	function getTestId(docType,name,prefix) {
+
+		var data = {'docType':docType,'name':name,'prefix':prefix};
+
+		// Serialize the data in the form
+		var serializedData = data.serialize();
+
+		// Fire off the request to /form.php
+		request1 = $.ajax({
+			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
+			method: "GET",
+			dataType: 'json',
+			data: serializedData
+		});
+
+		// Callback handler that will be called regardless
+		// if the request failed or succeeded
+		request1.always(function (response) {
+			console.log(response.result + ". Row " + response.row + " was created.");
+		});
 	};
 
 	// Google Sheets Helper Functions
@@ -488,7 +509,10 @@
 		//console.log(thisClientData);
 		e.preventDefault();
 		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
-			query("select " + thisClientData.data.colId, 'getId');
+			var newTestId = getTestId($('#docType').val(),$('#clientName1').val(),thisClientData.prefix);
+			console('New test ID: ' + newTestId);
+
+			// query("select " + thisClientData.data.colId, 'getId');
 		} else {
 			console.error('Failed to get ID - No client data available');
 		}
