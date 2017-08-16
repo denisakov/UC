@@ -53,43 +53,42 @@
 		// Prevent default posting of form
 		if (event) event.preventDefault();
 	};
-	function getTestId(docType,name,prefix) {
-		var data = {'docType':docType,'name':name,'prefix':prefix};
-		var xhr = new XMLHttpRequest();
-
-		var url = 'https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec';
-		xhr.open("GET", url, true);
-
-		xhr.setRequestHeader("Content-type","application/json");
-		xhr.setRequestHeader("charset","utf-8");
-		xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
-
-		xhr.onreadystatechange = function() {
-		  if (xhr.readyState === 4) {
-		      if (xhr.status === 200) {
-		          try {
-		              if (callback) {
-		                  callback(null, JSON.parse(xhr.responseText));
-		              }
-		          } catch(e) {
-		              throw new Error('Malformed response');
-		          }
-		      }
-		  }
+	function getTestId(event) {
+		// Abort any pending request
+		if (request) {
+			request.abort();
 		}
+		// setup some local variables
+		var $form = $('#uc_generator');
 
-		if (data) {
-		  data = JSON.stringify(data);         // Stringify the data Object literal
-		  xhr.send(data);                      // Added the JSON stringified object.
-		} else {
-		  xhr.send();
-		}
+		// Let's select and cache all the fields
+		var $inputs = $form.find("input, select, button, textarea");
 
+		// Serialize the data in the form
+		var serializedData = $form.serialize();
+
+		// Let's disable the inputs for the duration of the Ajax request.
+		// Note: we disable elements AFTER the form data has been serialized.
+		// Disabled form elements will not be serialized.
+		$inputs.prop("disabled", true);
+
+		// Fire off the request to /form.php
+		request = $.ajax({
+			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
+			method: "GET",
+			dataType: 'json',
+			data: serializedData
+		});
 		// Callback handler that will be called regardless
 		// if the request failed or succeeded
-		xhr.always(function (response) {
+		request.always(function (response) {
+			// Reenable the inputs
+			$inputs.prop("disabled", false);
 			console.log(response.result + ". Row " + response.row + " was created.");
 		});
+
+		// Prevent default posting of form
+		if (event) event.preventDefault();
 	};
 
 	// Google Sheets Helper Functions
@@ -524,9 +523,7 @@
 		//console.log(thisClientData);
 		e.preventDefault();
 		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
-			var newTestId = getTestId($('#docType').val(),$('#clientName1').val(),thisClientData.prefix);
-			console('New test ID: ' + newTestId);
-
+			getTestId();
 			// query("select " + thisClientData.data.colId, 'getId');
 		} else {
 			console.error('Failed to get ID - No client data available');
