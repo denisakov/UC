@@ -534,10 +534,8 @@
 		//console.log('The button is clicked');
 		// update hidden inputs
 		var docType = thisClientData.docType;
-		var listId = thisClientData.data.listIds[docType];
-		var boardId = thisClientData.data.boardId;
-		$('#listID').val(listId);
-		$('#boardID').val(boardId);
+		var prefix = thisClientData.prefix;
+		var boardId = thisClientData.clientName;
 
 		getTestId();
 
