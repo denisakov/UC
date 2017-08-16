@@ -519,16 +519,44 @@
 		$('#testID').val(newId);
 	};
 
-	$('#getTestId').click(function (e) {
-		//console.log(thisClientData);
+	// $('#getTestId').click(function (e) {
+	// 	//console.log(thisClientData);
+	// 	e.preventDefault();
+	// 	if (thisClientData && thisClientData.data && thisClientData.data.colId) {
+	// 		getTestId();
+	// 		// query("select " + thisClientData.data.colId, 'getId');
+	// 	} else {
+	// 		console.error('Failed to get ID - No client data available');
+	// 	}
+	// });
+	$('#getTestId').submit(function (e) {
 		e.preventDefault();
-		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
-			getTestId();
-			// query("select " + thisClientData.data.colId, 'getId');
-		} else {
-			console.error('Failed to get ID - No client data available');
+		//console.log('The button is clicked');
+		// update hidden inputs
+		var docType = thisClientData.docType;
+		var listId = thisClientData.data.listIds[docType];
+		var boardId = thisClientData.data.boardId;
+		$('#listID').val(listId);
+		$('#boardID').val(boardId);
+
+		/* If Hypothesis Document make sure generated ID exists and selected client id matches generated ID */
+		if (thisClientData.docType === 'Hypothesis Document') {
+			var selectedClientID = thisClientData.data.prefix;
+			var generatedID = $('#showTestId').text();
+			if (!generatedID) {
+				alert('Please generate an ID before submitting');
+				return false;
+			} else if (generatedID && generatedID.match(/\w{2}/)[0] !== selectedClientID) {
+				alert('Please generate a new ID for this client before submitting');
+				return false;
+			}
 		}
+		getTestId();
+
+		//$("#submitBtn").prop('disabled', true);
+
 	});
+
 
 	var updateThisClientData = function () {
 		var docType = $('#docType').val();
