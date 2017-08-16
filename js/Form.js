@@ -53,43 +53,6 @@
 		// Prevent default posting of form
 		if (event) event.preventDefault();
 	};
-	// function getTestId(event) {
-	// 	// Abort any pending request
-	// 	if (request) {
-	// 		request.abort();
-	// 	}
-	// 	// setup some local variables
-	// 	var $form = $('#uc_generator');
-
-	// 	// Let's select and cache all the fields
-	// 	var $inputs = $form.find("input, select, button, textarea");
-
-	// 	// Serialize the data in the form
-	// 	var serializedData = $form.serialize();
-
-	// 	// Let's disable the inputs for the duration of the Ajax request.
-	// 	// Note: we disable elements AFTER the form data has been serialized.
-	// 	// Disabled form elements will not be serialized.
-	// 	$inputs.prop("disabled", true);
-
-	// 	// Fire off the request to /form.php
-	// 	request = $.ajax({
-	// 		url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
-	// 		method: "GET",
-	// 		dataType: 'json',
-	// 		data: serializedData
-	// 	});
-	// 	// Callback handler that will be called regardless
-	// 	// if the request failed or succeeded
-	// 	request.always(function (response) {
-	// 		// Reenable the inputs
-	// 		$inputs.prop("disabled", false);
-	// 		console.log(response.result + ". Row " + response.row + " was created.");
-	// 	});
-
-	// 	// Prevent default posting of form
-	// 	if (event) event.preventDefault();
-	// };
 
 	// Google Sheets Helper Functions
 	var jsonp = function (url) {
@@ -451,7 +414,7 @@
 
 	/* thisClientData will be populated when user has selected both a document
 	type and client from the dropdowns.
-	@example: 
+	@example:
 	{
 		name: 'Agency Central',
 		data: {
@@ -465,7 +428,7 @@
 			},
 			testId: '002'
 		}
-	} 
+	}
 	*/
 	var thisClientData = {};
 
