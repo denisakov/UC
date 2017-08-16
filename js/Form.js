@@ -519,7 +519,7 @@
 		$('#testID').val(newId);
 	};
 
-	$('#testIdgenerator').click(function (e) {
+	$('#getTestId').click(function (e) {
 		//console.log(thisClientData);
 		e.preventDefault();
 		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
