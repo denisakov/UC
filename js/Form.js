@@ -539,18 +539,6 @@
 		$('#listID').val(listId);
 		$('#boardID').val(boardId);
 
-		/* If Hypothesis Document make sure generated ID exists and selected client id matches generated ID */
-		if (thisClientData.docType === 'Hypothesis Document') {
-			var selectedClientID = thisClientData.data.prefix;
-			var generatedID = $('#showTestId').text();
-			if (!generatedID) {
-				alert('Please generate an ID before submitting');
-				return false;
-			} else if (generatedID && generatedID.match(/\w{2}/)[0] !== selectedClientID) {
-				alert('Please generate a new ID for this client before submitting');
-				return false;
-			}
-		}
 		getTestId();
 
 		//$("#submitBtn").prop('disabled', true);
