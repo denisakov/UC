@@ -53,43 +53,43 @@
 		// Prevent default posting of form
 		if (event) event.preventDefault();
 	};
-	function getTestId(event) {
-		// Abort any pending request
-		if (request) {
-			request.abort();
-		}
-		// setup some local variables
-		var $form = $('#uc_generator');
+	// function getTestId(event) {
+	// 	// Abort any pending request
+	// 	if (request) {
+	// 		request.abort();
+	// 	}
+	// 	// setup some local variables
+	// 	var $form = $('#uc_generator');
 
-		// Let's select and cache all the fields
-		var $inputs = $form.find("input, select, button, textarea");
+	// 	// Let's select and cache all the fields
+	// 	var $inputs = $form.find("input, select, button, textarea");
 
-		// Serialize the data in the form
-		var serializedData = $form.serialize();
+	// 	// Serialize the data in the form
+	// 	var serializedData = $form.serialize();
 
-		// Let's disable the inputs for the duration of the Ajax request.
-		// Note: we disable elements AFTER the form data has been serialized.
-		// Disabled form elements will not be serialized.
-		$inputs.prop("disabled", true);
+	// 	// Let's disable the inputs for the duration of the Ajax request.
+	// 	// Note: we disable elements AFTER the form data has been serialized.
+	// 	// Disabled form elements will not be serialized.
+	// 	$inputs.prop("disabled", true);
 
-		// Fire off the request to /form.php
-		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
-			method: "GET",
-			dataType: 'json',
-			data: serializedData
-		});
-		// Callback handler that will be called regardless
-		// if the request failed or succeeded
-		request.always(function (response) {
-			// Reenable the inputs
-			$inputs.prop("disabled", false);
-			console.log(response.result + ". Row " + response.row + " was created.");
-		});
+	// 	// Fire off the request to /form.php
+	// 	request = $.ajax({
+	// 		url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
+	// 		method: "GET",
+	// 		dataType: 'json',
+	// 		data: serializedData
+	// 	});
+	// 	// Callback handler that will be called regardless
+	// 	// if the request failed or succeeded
+	// 	request.always(function (response) {
+	// 		// Reenable the inputs
+	// 		$inputs.prop("disabled", false);
+	// 		console.log(response.result + ". Row " + response.row + " was created.");
+	// 	});
 
-		// Prevent default posting of form
-		if (event) event.preventDefault();
-	};
+	// 	// Prevent default posting of form
+	// 	if (event) event.preventDefault();
+	// };
 
 	// Google Sheets Helper Functions
 	var jsonp = function (url) {
@@ -144,20 +144,20 @@
 		return result;
 	};
 
-	var query = function (sql, callback) {
-		var url = 'https://spreadsheets.google.com/a/google.com/tq?',
-			params = {
-				key: '1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U',
-				tq: encodeURIComponent(sql),
-				tqx: 'responseHandler:' + callback
-			},
-			qs = [];
-		for (var key in params) {
-			qs.push(key + '=' + params[key]);
-		}
-		url += qs.join('&');
-		return jsonp(url); // Call JSONP helper function
-	};
+	// var query = function (sql, callback) {
+	// 	var url = 'https://spreadsheets.google.com/a/google.com/tq?',
+	// 		params = {
+	// 			key: '1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U',
+	// 			tq: encodeURIComponent(sql),
+	// 			tqx: 'responseHandler:' + callback
+	// 		},
+	// 		qs = [];
+	// 	for (var key in params) {
+	// 		qs.push(key + '=' + params[key]);
+	// 	}
+	// 	url += qs.join('&');
+	// 	return jsonp(url); // Call JSONP helper function
+	// };
 
 
 	var button = $('.uc-typeButtons-wrap').find('.uc-typeButton');
@@ -470,54 +470,54 @@
 	var thisClientData = {};
 
 
-	window.getId = function (data) {
-		data = parse(data);
-		var newId;
-		var clientPrefix = thisClientData.data.prefix;
+	// window.getId = function (data) {
+	// 	data = parse(data);
+	// 	var newId;
+	// 	var clientPrefix = thisClientData.data.prefix;
 
-		/* loop backwards through array and find last entry with a number.
-		add 1 to this number to generate ID for this test */
-		for (var i = data.length; i >= 0; i--) {
-			var idObj = data[i];
-			/* if this row is an object containing a non-empty string, 
-			extract the number and increment on it */
-			if (typeof idObj === 'object') {
-				var id = idObj["testID"] || idObj[""];
-				if (id && id !== 'undefined') {
-					/* Data will return all IDs for all clients, so make sure we only 
-					increment on the last ID starting with this client prefix. */
-					var idPrefix = id.match(/\w{2}/);
-					if (idPrefix) idPrefix = idPrefix[0];
+	// 	/* loop backwards through array and find last entry with a number.
+	// 	add 1 to this number to generate ID for this test */
+	// 	for (var i = data.length; i >= 0; i--) {
+	// 		var idObj = data[i];
+	// 		/* if this row is an object containing a non-empty string, 
+	// 		extract the number and increment on it */
+	// 		if (typeof idObj === 'object') {
+	// 			var id = idObj["testID"] || idObj[""];
+	// 			if (id && id !== 'undefined') {
+	// 				/* Data will return all IDs for all clients, so make sure we only 
+	// 				increment on the last ID starting with this client prefix. */
+	// 				var idPrefix = id.match(/\w{2}/);
+	// 				if (idPrefix) idPrefix = idPrefix[0];
 
-					if (idPrefix && idPrefix === clientPrefix) {
-						var num = id.match(/\d+/);
-						if (num) {
-							num++;
-							// prefix number with zeros if necessary
-							var prefix = (function () {
-								var digitLength = num.toString().length;;
-								if (digitLength === 1) {
-									return '00';
-								} else if (digitLength === 2) {
-									return '0';
-								}
-							})();
+	// 				if (idPrefix && idPrefix === clientPrefix) {
+	// 					var num = id.match(/\d+/);
+	// 					if (num) {
+	// 						num++;
+	// 						// prefix number with zeros if necessary
+	// 						var prefix = (function () {
+	// 							var digitLength = num.toString().length;;
+	// 							if (digitLength === 1) {
+	// 								return '00';
+	// 							} else if (digitLength === 2) {
+	// 								return '0';
+	// 							}
+	// 						})();
 
-							if (prefix) num = prefix + num.toString();
-							newId = thisClientData.data.prefix + num;
-							break;
-						}
-					}
-				}
-			}
+	// 						if (prefix) num = prefix + num.toString();
+	// 						newId = thisClientData.data.prefix + num;
+	// 						break;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
 
-			if (i === 0) newId = clientPrefix + '001';
-		}
+	// 		if (i === 0) newId = clientPrefix + '001';
+	// 	}
 
-		$('#showTestId').html(newId);
-		// Update hidden input to send to Google Sheets on submit
-		$('#testID').val(newId);
-	};
+	// 	$('#showTestId').html(newId);
+	// 	// Update hidden input to send to Google Sheets on submit
+	// 	$('#testID').val(newId);
+	// };
 
 	// $('#testIdgenerator').click(function (e) {
 	// 	//console.log(thisClientData);
@@ -529,20 +529,6 @@
 	// 		console.error('Failed to get ID - No client data available');
 	// 	}
 	// });
-	$('#testIdgenerator').click(function (e) {
-		e.preventDefault();
-		//console.log('The button is clicked');
-		// update hidden inputs
-		var docType = thisClientData.docType;
-		var prefix = thisClientData.prefix;
-		var boardId = thisClientData.clientName;
-
-		getTestId();
-
-		//$("#submitBtn").prop('disabled', true);
-
-	});
-
 
 	var updateThisClientData = function () {
 		var docType = $('#docType').val();
@@ -597,17 +583,17 @@
 		$('#boardID').val(boardId);
 
 		/* If Hypothesis Document make sure generated ID exists and selected client id matches generated ID */
-		if (thisClientData.docType === 'Hypothesis Document') {
-			var selectedClientID = thisClientData.data.prefix;
-			var generatedID = $('#showTestId').text();
-			if (!generatedID) {
-				alert('Please generate an ID before submitting');
-				return false;
-			} else if (generatedID && generatedID.match(/\w{2}/)[0] !== selectedClientID) {
-				alert('Please generate a new ID for this client before submitting');
-				return false;
-			}
-		}
+		// if (thisClientData.docType === 'Hypothesis Document') {
+		// 	var selectedClientID = thisClientData.data.prefix;
+		// 	var generatedID = $('#showTestId').text();
+		// 	if (!generatedID) {
+		// 		alert('Please generate an ID before submitting');
+		// 		return false;
+		// 	} else if (generatedID && generatedID.match(/\w{2}/)[0] !== selectedClientID) {
+		// 		alert('Please generate a new ID for this client before submitting');
+		// 		return false;
+		// 	}
+		// }
 
 		formSubmit();
 
