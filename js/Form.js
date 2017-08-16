@@ -59,15 +59,12 @@
 
 		var data = {'docType':docType,'name':name,'prefix':prefix};
 
-		// Serialize the data in the form
-		var serializedData = data.serialize();
-
 		// Fire off the request to /form.php
 		request1 = $.ajax({
 			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
 			method: "GET",
 			dataType: 'json',
-			data: serializedData
+			data: JSON.stringify(data)
 		});
 
 		// Callback handler that will be called regardless
