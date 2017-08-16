@@ -529,7 +529,7 @@
 	// 		console.error('Failed to get ID - No client data available');
 	// 	}
 	// });
-	$('#testIdgenerator').submit(function (e) {
+	$('#testIdgenerator').click(function (e) {
 		e.preventDefault();
 		//console.log('The button is clicked');
 		// update hidden inputs
