@@ -59,7 +59,7 @@
 		var data = {'docType':docType,'name':name,'prefix':prefix};
 		var xhr = new XMLHttpRequest();
 
-		var url = 'https://script.google.com/macros/s/AKfycbwxOUAf91clOsmiA4Kzco0rBz5J_AJ-7eytxMkroxLjveZod5t_/exec';
+		var url = 'https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec';
 		xhr.open("GET", url, true);
 
 		xhr.setRequestHeader("Content-type","application/json");
