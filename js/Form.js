@@ -56,7 +56,7 @@
 		if (event) event.preventDefault();
 	};
 	function getTestId(docType,name,prefix) {
-
+		var request1 = new XMLHttpRequest();
 		var data = {'docType':docType,'name':name,'prefix':prefix};
 		request1.setRequestHeader("Access-Control-Allow-Origin", "*");
 		// Fire off the request to /form.php
