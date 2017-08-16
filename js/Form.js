@@ -1,5 +1,3 @@
-//https://spreadsheets.google.com/a/google.com/tq?key=1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U&tq=select%20D&tqx=responseHandler:getId
-//https://docs.google.com/spreadsheets/d/1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U/gviz/tq?tq=select+D&tqx=responseHandler:getId
 (function () {
 	// Variable to hold request
 	var request;
