@@ -25,9 +25,9 @@
 
 		// Fire off the request to /form.php
 		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec&callback=?",
+			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
 			method: "POST",
-			dataType: 'json',
+			dataType: 'jsonp',
 			data: serializedData
 		});
 
