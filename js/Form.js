@@ -501,7 +501,7 @@
 			thisClientData.data = clientData[client];
 			thisClientData.docType = docType;
 			thisClientData.prefix = clientData[client].prefix;
-			$('#testID').val(clientData[client].prefix);
+			$('#testID').value = clientData[client].prefix;
 			// Show generate ID button if hypothesis document
 			// if (docType === 'Hypothesis Document') {
 			// 	$('#getTestId').show();
