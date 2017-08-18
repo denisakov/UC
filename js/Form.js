@@ -501,8 +501,9 @@
 			thisClientData.data = clientData[client];
 			thisClientData.docType = docType;
 			thisClientData.prefix = clientData[client].prefix;
-			$('#testID').value = clientData[client].prefix;
-			console.log('Prefix assiged: ' + $('#testID').val());
+			// $('#testID').value = clientData[client].prefix;
+			// console.log('Prefix assiged: ' + $('#testID').val());
+
 			// Show generate ID button if hypothesis document
 			// if (docType === 'Hypothesis Document') {
 			// 	$('#getTestId').show();
