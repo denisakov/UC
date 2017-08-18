@@ -542,8 +542,10 @@
 		var docType = thisClientData.docType;
 		var listId = thisClientData.data.listIds[docType];
 		var boardId = thisClientData.data.boardId;
+		var prefix = thisClientData.prefix;
 		$('#listID').val(listId);
 		$('#boardID').val(boardId);
+		$('#prefix').val(prefix);
 
 		/* If Hypothesis Document make sure generated ID exists and selected client id matches generated ID */
 		// if (thisClientData.docType === 'Hypothesis Document') {
