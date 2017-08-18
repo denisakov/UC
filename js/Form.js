@@ -500,13 +500,14 @@
 			thisClientData.name = client;
 			thisClientData.data = clientData[client];
 			thisClientData.docType = docType;
+			thisClientData.prefix = clientData[client].prefix;
 
 			// Show generate ID button if hypothesis document
-			if (docType === 'Hypothesis Document') {
-				$('#getTestId').show();
-			} else {
-				$('#getTestId').hide();
-			}
+			// if (docType === 'Hypothesis Document') {
+			// 	$('#getTestId').show();
+			// } else {
+			// 	$('#getTestId').hide();
+			// }
 		}
 	};
 
