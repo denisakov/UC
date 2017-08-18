@@ -91,7 +91,7 @@
                         <div name="Experiment Sprint" class="uc-typeButton">Experiment Sprint</div>
                     </div>
 
-                    <input id="testID" type="hidden" name="testID" value="">
+                    <!-- <input id="testID" type="hidden" name="testID" value=""> -->
                     <input id="listID" type="hidden" name="listID" value="">
                     <input id="boardID" type="hidden" name="boardID" value="">
                     <br>
@@ -100,15 +100,21 @@
         </div>
         <div class="uc_form-content">
             <div id="uc_hypothesis" class="hypothesis_form second_section hidden">
-                <div class="testIdbutton">
+                <!-- <div class="testIdbutton">
                     <button id="getTestId" type="button">Generate Test ID</button> <span id="showTestId"></span>
-                </div>
+                </div> -->
+                <span class="input">
+                    <input id="testID" class="input__field" type="text" name="testID" size="40">
+                    <label class="input__label" for="input-10">
+                        <span class="label__content">Test ID (if left blank, auto-assigned):</span>
+                    </label>
+                </span>
 
                 <span class="input">
                     <input id="testName" class="input__field" type="text" name="testName" size="40">
                     <label class="input__label" for="input-10">
-                    <span class="label__content">Test Name:</span>
-                </label>
+                        <span class="label__content">Test Name:</span>
+                    </label>
                 </span>
 
                 <span class="input">
