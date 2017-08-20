@@ -477,12 +477,13 @@
 			if (i === 0) newId = clientPrefix + '001';
 		}
 
-		$('#showTestId').html(newId);
+		//$('#showTestId').html(newId);
 		// Update hidden input to send to Google Sheets on submit
 		$('#testID').val(newId);
+		// $('#testID').attr("placeholder",newId);
 	};
 
-	$('#getTestId').click(function (e) {
+	$('#testId').focus(function (e) {
 		//console.log(thisClientData);
 		e.preventDefault();
 		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
@@ -492,6 +493,16 @@
 			console.error('Failed to get ID - No client data available');
 		}
 	});
+	// $('#getTestId').click(function (e) {
+	// 	//console.log(thisClientData);
+	// 	e.preventDefault();
+	// 	if (thisClientData && thisClientData.data && thisClientData.data.colId) {
+	// 		//getTestId();
+	// 		 query("select " + thisClientData.data.colId, 'getId');
+	// 	} else {
+	// 		console.error('Failed to get ID - No client data available');
+	// 	}
+	// });
 
 	var updateThisClientData = function () {
 		var docType = $('#docType').val();
