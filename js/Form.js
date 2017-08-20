@@ -139,6 +139,13 @@
 			if ($('#submitBtn').hasClass('hidden')) {
 				$('#submitBtn').removeClass('hidden');
 			}
+
+			if (thisClientData && thisClientData.data && thisClientData.data.colId) {
+				//getTestId();
+				 query("select " + thisClientData.data.colId, 'getId');
+			} else {
+				console.error('Failed to get ID - No client data available');
+			}
 		})
 
 	});
@@ -484,16 +491,16 @@
 		// $('#testID').attr("placeholder",newId);
 	};
 
-	$('#testID').focus(function (e) {
-		//console.log(thisClientData);
-		e.preventDefault();
-		if (thisClientData && thisClientData.data && thisClientData.data.colId) {
-			//getTestId();
-			 query("select " + thisClientData.data.colId, 'getId');
-		} else {
-			console.error('Failed to get ID - No client data available');
-		}
-	});
+	// $('#testID').focus(function (e) {
+	// 	//console.log(thisClientData);
+	// 	e.preventDefault();
+	// 	if (thisClientData && thisClientData.data && thisClientData.data.colId) {
+	// 		//getTestId();
+	// 		 query("select " + thisClientData.data.colId, 'getId');
+	// 	} else {
+	// 		console.error('Failed to get ID - No client data available');
+	// 	}
+	// });
 	// $('#getTestId').click(function (e) {
 	// 	//console.log(thisClientData);
 	// 	e.preventDefault();
