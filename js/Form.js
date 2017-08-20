@@ -153,12 +153,7 @@
 			$('.half_sprint_form').slideUp('200').removeClass('active');
 			$('.insight_form').slideUp('200').removeClass('active');
 			$('.sprint_form').slideUp('200').removeClass('active');
-			if (thisClientData && thisClientData.data && thisClientData.data.colId) {
-				//getTestId();
-				 query("select " + thisClientData.data.colId, 'getId');
-			} else {
-				console.error('Failed to get ID - No client data available');
-			}
+			query("select D", 'getId');
 		} else if (selectedOption === "Test Idea") {
 			$('.idea_form').slideDown('200').addClass('active');
 			$('.hypothesis_form').slideUp('200').removeClass('active');
