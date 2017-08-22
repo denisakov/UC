@@ -482,7 +482,7 @@
 		//$('#showTestId').html(newId);
 		// Update hidden input to send to Google Sheets on submit
 		$('#testID').val(newId);
-		$('#testId').val(newId);
+		$('#testerId').val(newId);
 		// $('#testID').attr("placeholder",newId);
 	};
 
