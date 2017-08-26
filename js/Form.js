@@ -139,6 +139,7 @@
 			if ($('#submitBtn').hasClass('hidden')) {
 				$('#submitBtn').removeClass('hidden');
 			}
+			$('.input')[0].addClass('input--filled');
 
 		})
 
@@ -550,7 +551,6 @@
 		var $filled = $('.input--filled');
 		if ($filled.length) {
 			$filled.removeClass('input--filled');
-			$('.input')[0].addClass('input--filled');
 		}
 	}
 
