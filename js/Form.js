@@ -139,7 +139,7 @@
 			if ($('#submitBtn').hasClass('hidden')) {
 				$('#submitBtn').removeClass('hidden');
 			}
-			$('.input')[0].addClass('input--filled');
+			$('#testID')[0].parentNode.addClass('input--filled');
 
 		})
 
