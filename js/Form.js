@@ -583,13 +583,13 @@
 
 		setTimeout(function () {
 
-			var r = confirm("Form Submitted. You can now close the window or select \"OK\" to create a new form");
-			if (r == true) {
+			// var r = confirm("Form Submitted. You can now close the window or select \"OK\" to create a new form");
+			// if (r == true) {
 				clearForm();
 
-			}
+			// }
 
-		}, 2000)
+		}, 500)
 	});
 
 })();
