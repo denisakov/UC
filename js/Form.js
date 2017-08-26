@@ -538,7 +538,8 @@
 		$('.insight_form').removeClass('active');
 		$('.sprint_form').removeClass('active');
 		$('#submitBtn')[0].disabled;
-		$("#submitBtn").prop('disabled', false);
+		$('#submitBtn').prop('disabled', false);
+		$('#submitBtn').addClass('hidden');
 		$('.uc-typeButton').removeClass('active');
 		$('.second_section').slideUp('200');
 		$('#yesSprint2')[0].checked = false;
@@ -549,6 +550,7 @@
 		var $filled = $('.input--filled');
 		if ($filled.length) {
 			$filled.removeClass('input--filled');
+			$filled[0].addClass('input--filled');
 		}
 	}
 
