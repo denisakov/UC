@@ -550,7 +550,7 @@
 		var $filled = $('.input--filled');
 		if ($filled.length) {
 			$filled.removeClass('input--filled');
-			$filled[0].addClass('input--filled');
+			$('.input')[0].addClass('input--filled');
 		}
 	}
 
