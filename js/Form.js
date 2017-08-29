@@ -110,7 +110,7 @@
 	var query = function (sql, callback) {
 		var url = 'https://spreadsheets.google.com/a/google.com/tq?',
 			params = {
-				key: 'AKfycbw3Sp6Ivvh0ROz9HO_VFfuiis0KnfsNQPQtwhi3HtcLNV_emGdJ',
+				key: '1uRQHJbmXMEM9eN5qKI0epUoHW0gwAV5WT9MqkUMj2Og',
 				tq: encodeURIComponent(sql),
 				tqx: 'responseHandler:' + callback
 			},
