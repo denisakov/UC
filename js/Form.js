@@ -25,7 +25,7 @@
 
 		// Fire off the request to /form.php
 		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbwJmfmP1cON_vI2GMGSZaBh840Yy_JCz7f8yiA1ZuKJZ8ItXWY/exec",
+			url: "https://script.google.com/a/macros/userconversion.com/s/AKfycbw3Sp6Ivvh0ROz9HO_VFfuiis0KnfsNQPQtwhi3HtcLNV_emGdJ/exec",
 			method: "POST",
 			dataType: 'jsonp',
 			data: serializedData
@@ -110,7 +110,7 @@
 	var query = function (sql, callback) {
 		var url = 'https://spreadsheets.google.com/a/google.com/tq?',
 			params = {
-				key: '1h_fk4mRPFDnZduO17ordB5v4pFxFMPQXrpEf_7Khb0U',
+				key: 'AKfycbw3Sp6Ivvh0ROz9HO_VFfuiis0KnfsNQPQtwhi3HtcLNV_emGdJ',
 				tq: encodeURIComponent(sql),
 				tqx: 'responseHandler:' + callback
 			},
