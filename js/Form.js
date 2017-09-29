@@ -123,7 +123,61 @@
 	};
 
 
-	var button = $('.uc-typeButtons-wrap').find('.uc-typeButton');
+	$('.uc-typeButton').each(function () {
+        var value = $(this).val();
+        $(this).click(function () {
+		$(this).find('.uctopradio').prop('checked',true);
+		var name = $(this).attr('name');
+            $('#yesSprint2')[0].checked = false;
+            $('#yesSprint1')[0].checked = false;
+            $('#noSprint1')[0].checked = false;
+            $('#noSprint2')[0].checked = false;
+            $('#uc_generator .documentSelect').val($(this).attr('name')).trigger('change');
+
+            if ($('#submitBtn').hasClass('hidden')) {
+                $('#submitBtn').removeClass('hidden');
+            }
+            //$('#testID')[0].parentNode.addClass('input--filled');
+
+        });
+
+	});
+
+	/*SPRINT TIME BUTTONS*/
+	$('.time-button').each(function () {
+		$(this).click(function(){
+			var timevalue = $(this).attr('name');
+			$('.form-field.timeDate #targetTime').val($(this).attr('name')).trigger('change');
+			if(!$(this).hasClass('timeActive')){
+				$(this).addClass('timeActive');
+				$(this).siblings().removeClass('timeActive');
+
+			}
+		});
+	});
+	/*date picker*/
+
+
+	/*$('.uctopradio').each(function () {
+        var value = $(this).val();
+        $(this).click(function () {
+		var name = $(this).attr('name');
+            $('#yesSprint2')[0].checked = false;
+            $('#yesSprint1')[0].checked = false;
+            $('#noSprint1')[0].checked = false;
+            $('#noSprint2')[0].checked = false;
+            $('#uc_generator .documentSelect').val($(this).val()).trigger('change');
+
+            if ($('#submitBtn').hasClass('hidden')) {
+                $('#submitBtn').removeClass('hidden');
+            }
+            //$('#testID')[0].parentNode.addClass('input--filled');
+
+        })
+
+    });
+
+	/*var button = $('.uc-typeButtons-wrap').find('.uc-typeButton');
 	button.each(function () {
 		var name = $(this).attr('name');
 		$(this).click(function () {
@@ -143,7 +197,7 @@
 
 		})
 
-	});
+	});*/
 
 	//Show and Hide the Relevant Forms
 	$('#uc_generator .documentSelect').change(function () {
@@ -251,14 +305,14 @@
 				'Client Insight': '5906e420f3a1b5086382a491'
 			}
 		},
-		'BlueCart': {
-			prefix: 'BC',
+		'Biscuiteers': {
+			prefix: 'BI',
 			colId: 'D',
-			boardId: '58510203a63babd3dd98b002',
+			boardId: '59a88569e1016901c0092d82',
 			listIds: {
-				'Hypothesis Document': '58510220f32b3079ca704605',
-				'Test Idea': '5851021ab18f2d3a13317810',
-				'Client Insight': '59077bd4446ed83868919bfe'
+				'Hypothesis Document': '59a88569e1016901c0092d88',
+				'Test Idea': '59a88569e1016901c0092d86',
+				'Client Insight': '59a88569e1016901c0092d85'
 			}
 		},
 		'CurrentBody.com': {
@@ -271,16 +325,7 @@
 				'Client Insight': '58e2516c9b2b7311701e0f65'
 			}
 		},
-		'Gazprom': {
-			prefix: 'GZ',
-			colId: 'D',
-			boardId: '5731f92b9477dc5f638c627d',
-			listIds: {
-				'Hypothesis Document': '59077d41988aeb68b6378460',
-				'Test Idea': '59077d3974492aeeda2db439',
-				'Client Insight': '57503aea3946d4487aa6ca59'
-			}
-		},
+
 		'In The Style': {
 			prefix: 'IT',
 			colId: 'D',
@@ -311,16 +356,27 @@
 				'Client Insight': '590773a1a203842a0a72477b'
 			}
 		},
-		'Pixartprinting': {
-			prefix: 'PP',
+		'National Holidays': {
+			prefix: 'NH',
 			colId: 'D',
-			boardId: '57e2c0dfef8e291313a22244',
+			boardId: '59b2abfa2bc0ee9833921360',
 			listIds: {
-				'Hypothesis Document': '58330ed4b7717701908c0462',
-				'Test Idea': '57e2c0ee9bbfc1497cc88f73',
-				'Client Insight': '590774e5e756ae5637495328'
+				'Hypothesis Document': '59b2abfa2bc0ee9833921366',
+				'Test Idea': '59b2abfa2bc0ee9833921364',
+				'Client Insight': '59b2abfa2bc0ee9833921363'
 			}
 		},
+		'Protec Direct': {
+			prefix: 'PD',
+			colId: 'D',
+			boardId: '597a159e22addb53d82dbed8',
+			listIds: {
+				'Hypothesis Document': '597a159e22addb53d82dbede',
+				'Test Idea': '597a159e22addb53d82dbedc',
+				'Client Insight': '597a159e22addb53d82dbedb'
+			}
+		},
+
 		'Red Cross Training': {
 			prefix: 'RC',
 			colId: 'D',
@@ -351,16 +407,7 @@
 				'Client Insight': '59074d9d356212551befb037'
 			}
 		},
-		'Soccer Store': {
-			prefix: 'SS',
-			colId: 'D',
-			boardId: '57659c18c55416443ec752ca',
-			listIds: {
-				'Hypothesis Document': '5765a6b662ff970b824b00d9',
-				'Test Idea': '5765a6af4e84b09576004965',
-				'Client Insight': '591ec5916b8efab6ab1ef4ca'
-			}
-		},
+
 		'Technogym': {
 			prefix: 'TG',
 			colId: 'D',
@@ -399,16 +446,6 @@
 				'Hypothesis Document': '59074cd57d56688f67752eb5',
 				'Test Idea': '59074cd57d56688f67752eb4',
 				'Client Insight': '59074cd57d56688f67752eb2'
-			}
-		},
-		'Your Mortgage': {
-			prefix: 'YM',
-			colId: 'D',
-			boardId: '57e4eb77b54a807dfbddd771',
-			listIds: {
-				'Hypothesis Document': '580549aec72522ead9092614',
-				'Test Idea': '57e4ec03796c9521d377a5b6',
-				'Client Insight': '591ec7a81ffb224f043e8737'
 			}
 		}
 	};
