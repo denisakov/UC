@@ -151,10 +151,20 @@
 			if(!$(this).hasClass('timeActive')){
 				$(this).addClass('timeActive');
 				$(this).siblings().removeClass('timeActive');
-
+				/* Set the selection in the time list based on the time buttons value*/
+				$('#targetTime').children().each(function () {
+					if($(this).value == timevalue && !$(this).attr('selected')){
+						$(this).attr('seleted','selected');
+					} else if($(this).attr('selected')){
+						$(this).removeAttr('selected');
+					}
+				});
 			}
 		});
 	});
+
+
+
 	/*date picker*/
 
 
