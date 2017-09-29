@@ -153,6 +153,7 @@
 				$(this).siblings().removeClass('timeActive');
 				/* Set the selection in the time list based on the time buttons value*/
 				$('#targetTime').children().each(function () {
+					console.log('got it');
 					if($(this).value == timevalue && !$(this).attr('selected')){
 						$(this).attr('selected','selected');
 					} else if($(this).attr('selected')){
