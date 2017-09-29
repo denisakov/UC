@@ -153,11 +153,12 @@
 				$(this).siblings().removeClass('timeActive');
 				/* Set the selection in the time list based on the time buttons value*/
 				$('#targetTime').children().each(function () {
-					console.log('got it');
-					if($(this).value == timevalue && !$(this).attr('selected')){
-						$(this).attr('selected','selected');
-					} else if($(this).attr('selected')){
-						$(this).removeAttr('selected');
+					console.log($(this)[0].getAttribute('selected'));
+
+					if($(this)[0].value == timevalue && !$(this)[0].getAttribute('selected')){
+						$(this)[0].setAttribute('selected','selected');
+					} else if($(this)[0].getAttribute('selected')){
+						$(this)[0].removeAttribute('selected');
 					}
 				});
 			}
