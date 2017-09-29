@@ -154,7 +154,7 @@
 				/* Set the selection in the time list based on the time buttons value*/
 				$('#targetTime').children().each(function () {
 					if($(this).value == timevalue && !$(this).attr('selected')){
-						$(this).attr('seleted','selected');
+						$(this).attr('selected','selected');
 					} else if($(this).attr('selected')){
 						$(this).removeAttr('selected');
 					}
